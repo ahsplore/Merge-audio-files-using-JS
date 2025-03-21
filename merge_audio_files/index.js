@@ -74,7 +74,6 @@ function bufferToWave(buffer) {
     return new Blob([bufferArray], { type: "audio/wav" });
 }
 
-// Event listener
 document.getElementById("mergeButton").addEventListener("click", async () => {
     const fileInput = document.getElementById("audioFiles");
     if (fileInput.files.length === 0) {
@@ -87,7 +86,7 @@ document.getElementById("mergeButton").addEventListener("click", async () => {
         const url = URL.createObjectURL(mergedBlob);
         
         const audioContainer = document.getElementById("audioContainer");
-        audioContainer.innerHTML = ""; // clear prev audio
+        audioContainer.innerHTML = "";
 
         const audio = new Audio(url);
         audio.controls = true;
